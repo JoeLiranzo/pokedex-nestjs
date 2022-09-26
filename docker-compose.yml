@@ -1,0 +1,36 @@
+version: '3.7'
+
+services:
+  pokedex:
+    container_name: pokedex
+    image: pokedex
+    build:
+      # context: .
+      # target: development
+      dockerfile: ./Dockerfile
+    ports:
+      - "4000:4000"
+    # networks:
+    #   - nesjs-network      
+    # environment:
+    #   - DB_URL=mongodb://db_mongo
+    volumes:
+      - c:/projects/nestjs/pokedex/:/usr/src/app
+      - /usr/src/app/node_modules
+    # depends_on:
+    #   - mongo
+#    restart: always
+  # mongo:
+  #   image: mongo
+  #   container_name: db_mongo
+  #   volumes:
+  #     - mongodata:/data/db
+  #   ports:
+  #     - "27017:27017"
+  #   networks:
+  #     - nesjs-network      
+  #   restart: always
+networks:
+  nesjs-network:
+# volumes:
+#   mongodata: 
