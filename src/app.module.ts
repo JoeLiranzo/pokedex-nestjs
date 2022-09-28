@@ -13,7 +13,8 @@ import { SeedModule } from './seed/seed.module';
 	}),
 
 	MongooseModule.forRoot(
-		'mongodb://deepthinking.dev:27017/nestjs-pokemon'
+		//'mongodb+srv://dextro:pngtjt88@mongo.zsnhb4l.mongodb.net/nestjs-pokemon?retryWrites=true&w=majority'
+		'mongodb://dextro:7u4Qrnl5Gz39y3nDK1gucD@deepthinking.dev:27017/nestjs-pokemon?authSource=admin'
 	),
 
 	PokemonModule,
