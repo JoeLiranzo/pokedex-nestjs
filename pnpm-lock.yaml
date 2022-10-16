@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@nestjs/cli': ^9.0.0
   '@nestjs/common': ^9.0.0
+  '@nestjs/config': ^2.2.0
   '@nestjs/core': ^9.0.0
   '@nestjs/mapped-types': '*'
   '@nestjs/mongoose': ^9.2.0
@@ -23,6 +24,7 @@ specifiers:
   eslint-config-prettier: ^8.3.0
   eslint-plugin-prettier: ^4.0.0
   jest: 28.1.2
+  joi: ^17.6.3
   mongoose: ^6.6.1
   nvm: ^0.0.4
   prettier: ^2.3.2
@@ -39,6 +41,7 @@ specifiers:
 
 dependencies:
   '@nestjs/common': 9.1.2_j5hagqx4mwzscud4kyjdvubauy
+  '@nestjs/config': 2.2.0
   '@nestjs/core': 9.1.2_foclggtudvr6cnfc5hz7ukfode
   '@nestjs/mapped-types': 1.1.0_67wpnlagyp3qdvdavb2yu27dka
   '@nestjs/mongoose': 9.2.0_mongoose@6.6.1
@@ -47,6 +50,7 @@ dependencies:
   axios: 0.27.2
   class-transformer: 0.5.1
   class-validator: 0.13.2
+  joi: 17.6.3
   mongoose: 6.6.1
   nvm: 0.0.4
   reflect-metadata: 0.1.13
@@ -542,6 +546,16 @@ packages:
       - supports-color
     dev: true
 
+  /@hapi/hoek/9.3.0:
+    resolution: {integrity: sha512-/c6rf4UJlmHlC9b5BaNvzAcFv7HZ2QHaV0D4/HNlBdvFnvQq8RI4kYdhyPCl7Xj+oWvTWQ8ujhqS53LIgAe6KQ==}
+    dev: false
+
+  /@hapi/topo/5.1.0:
+    resolution: {integrity: sha512-foQZKJig7Ob0BMAYBfcJk8d77QtOe7Wo4ox7ff1lQYoNNAb6jwcY1ncdoy2e9wQZzvNy7ODZCYJkK8kzmcAnAg==}
+    dependencies:
+      '@hapi/hoek': 9.3.0
+    dev: false
+
   /@humanwhocodes/config-array/0.10.5:
     resolution: {integrity: sha512-XVVDtp+dVvRxMoxSiSfasYaG02VEe1qH5cKgMQJWhol6HwzbcqoCMJi8dAGoYAO57jhUyhI6cWuRiTcRaDaYug==}
     engines: {node: '>=10.10.0'}
@@ -905,6 +919,19 @@ packages:
       tslib: 2.4.0
       uuid: 9.0.0
 
+  /@nestjs/config/2.2.0:
+    resolution: {integrity: sha512-78Eg6oMbCy3D/YvqeiGBTOWei1Jwi3f2pSIZcZ1QxY67kYsJzTRTkwRT8Iv30DbK0sGKc1mcloDLD5UXgZAZtg==}
+    peerDependencies:
+      '@nestjs/common': ^7.0.0 || ^8.0.0 || ^9.0.0
+      reflect-metadata: ^0.1.13
+      rxjs: ^6.0.0 || ^7.2.0
+    dependencies:
+      dotenv: 16.0.1
+      dotenv-expand: 8.0.3
+      lodash: 4.17.21
+      uuid: 8.3.2
+    dev: false
+
   /@nestjs/core/9.1.2_foclggtudvr6cnfc5hz7ukfode:
     resolution: {integrity: sha512-wrb/U8PN50K9wEHOLifR9bFKDH8+Dr37rXBB5J+9v3tSWEHkT4o2OiJ8qFmfX5B9GwGE/YRKaJqxw/ScvYvPFw==}
     requiresBuild: true
@@ -1073,6 +1100,20 @@ packages:
       node-fetch: 2.6.7
     transitivePeerDependencies:
       - encoding
+
+  /@sideway/address/4.1.4:
+    resolution: {integrity: sha512-7vwq+rOHVWjyXxVlR76Agnvhy8I9rpzjosTESvmhNeXOXdZZB15Fl+TI9x1SiHZH5Jv2wTGduSxFDIaq0m3DUw==}
+    dependencies:
+      '@hapi/hoek': 9.3.0
+    dev: false
+
+  /@sideway/formula/3.0.0:
+    resolution: {integrity: sha512-vHe7wZ4NOXVfkoRb8T5otiENVlT7a3IAiw7H5M2+GO+9CDgcVUUsX1zalAztCmwyOr2RUTGJdgB+ZvSVqmdHmg==}
+    dev: false
+
+  /@sideway/pinpoint/2.0.0:
+    resolution: {integrity: sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==}
+    dev: false
 
   /@sinclair/typebox/0.24.43:
     resolution: {integrity: sha512-1orQTvtazZmsPeBroJjysvsOQCYV2yjWlebkSY38pl5vr2tdLjEJ+LoxITlGNZaH2RE19WlAwQMkH/7C14wLfw==}
@@ -2205,6 +2246,16 @@ packages:
     dependencies:
       esutils: 2.0.3
     dev: true
+
+  /dotenv-expand/8.0.3:
+    resolution: {integrity: sha512-SErOMvge0ZUyWd5B0NXMQlDkN+8r+HhVUsxgOO7IoPDOdDRD2JjExpN6y3KnFR66jsJMwSn1pqIivhU5rcJiNg==}
+    engines: {node: '>=12'}
+    dev: false
+
+  /dotenv/16.0.1:
+    resolution: {integrity: sha512-1K6hR6wtk2FviQ4kEiSjFiH5rpzEVi8WW0x96aztHVMhEspNpc4DVOUTEHtEva5VThQ8IaBX1Pe4gSzpVVUsKQ==}
+    engines: {node: '>=12'}
+    dev: false
 
   /ee-first/1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
@@ -3495,6 +3546,16 @@ packages:
       - ts-node
     dev: true
 
+  /joi/17.6.3:
+    resolution: {integrity: sha512-YlQsIaS9MHYekzf1Qe11LjTkNzx9qhYluK3172z38RxYoAUf82XMX1p1DG1H4Wtk2ED/vPdSn9OggqtDu+aTow==}
+    dependencies:
+      '@hapi/hoek': 9.3.0
+      '@hapi/topo': 5.1.0
+      '@sideway/address': 4.1.4
+      '@sideway/formula': 3.0.0
+      '@sideway/pinpoint': 2.0.0
+    dev: false
+
   /js-sdsl/4.1.4:
     resolution: {integrity: sha512-Y2/yD55y5jteOAmY50JbUZYwk3CP3wnLPEZnlR1w9oKhITrBEtAxwuWKebFf8hMrPMgbYwFoWK/lH2sBkErELw==}
     dev: true
@@ -3621,7 +3682,6 @@ packages:
 
   /lodash/4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-    dev: true
 
   /log-symbols/4.1.0:
     resolution: {integrity: sha512-8XPvpAA8uyhfteu8pIvQxpJZ7SYYdpUivZpGy6sFsBuKRY/7rQGavedeB8aK+Zkyq6upMFVL/9AW6vOYzfRyLg==}
@@ -4898,6 +4958,11 @@ packages:
   /utils-merge/1.0.1:
     resolution: {integrity: sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==}
     engines: {node: '>= 0.4.0'}
+
+  /uuid/8.3.2:
+    resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
+    hasBin: true
+    dev: false
 
   /uuid/9.0.0:
     resolution: {integrity: sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==}
